@@ -8,5 +8,7 @@ public class App {
 
         System.out.println(house.getValue());
 
+        Vehicle vehicle = new Vehicle("Car", "11/10/2026", new BigDecimal("10000"), "Hyundai Sonata", 2026, 100);
+
     }
 }
