@@ -39,6 +39,7 @@ public class Vehicle extends Asset {
         this.odometer = odometer;
     }
 
+    @Override
     public BigDecimal getValue() {
         BigDecimal value = BigDecimal.ZERO;
         LocalDate yearNow = LocalDate.now();
