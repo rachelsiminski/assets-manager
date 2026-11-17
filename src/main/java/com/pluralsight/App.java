@@ -20,5 +20,13 @@ public class App {
         for (Asset asset : assets) {
             System.out.println("Date Acquired: " + asset.getDateAcquired() + "\nDescription: " + asset.getDescription() + "\nCost: " + asset.getOriginalCost() + "\nValue: " + asset.getValue());
         }
+
+        for (int i = 0; i < assets.size(); i++) {
+            if (assets.get(i) instanceof House) {
+                System.out.println("Address: " + ((House) assets.get(i)).getAddress());
+            } else if (assets.get(i) instanceof Vehicle) {
+                System.out.println("Make and Model: " + ((Vehicle) assets.get(i)).getMakeModel());
+            }
+        }
     }
 }

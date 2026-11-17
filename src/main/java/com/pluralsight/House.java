@@ -58,8 +58,6 @@ public class House extends Asset {
             case 4 -> value = 80 * this.squareFoot;
             default -> System.out.println("Condition should be a value 1-4");
         }
-
-
         return new BigDecimal(value + (.25 * squareFoot));
     }
 }
