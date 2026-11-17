@@ -43,15 +43,17 @@ public class Vehicle extends Asset {
     public BigDecimal getValue() {
         BigDecimal value = BigDecimal.ZERO;
         LocalDate yearNow = LocalDate.now();
-        int yearDifference = yearNow.getYear() - getYear();
-        switch (yearDifference) {
-            case 0, 1, 2, 3 -> value = getOriginalCost().multiply(BigDecimal.valueOf(.03));
-            case 4, 5, 6 -> value = getOriginalCost().multiply(BigDecimal.valueOf(.06));
-            case 7, 8, 9, 10 -> value = getOriginalCost().multiply(BigDecimal.valueOf(.08));
-            default -> value = new BigDecimal(1000);
+        int age = yearNow.getYear() - getYear();
+        switch (age) {
+            case 0, 1, 2, 3 -> value = getOriginalCost().multiply(new BigDecimal(".03").multiply(BigDecimal.valueOf(age)));
+            case 4, 5, 6 -> value = getOriginalCost().multiply(new BigDecimal(".06").multiply(BigDecimal.valueOf(age)));
+            case 7, 8, 9, 10 -> value = getOriginalCost().multiply(new BigDecimal(".08").multiply(new BigDecimal(age)));
+            default -> {
+                value = BigDecimal.valueOf(1000);
+            }
         }
-        if (odometer > 100000 && !getMakeModel().contains("Honda") && ! getMakeModel().contains("Toyota")) {
-            value = value.multiply(BigDecimal.valueOf(.25));
+        if (odometer > 100000 && !getMakeModel().contains("Honda") && !getMakeModel().contains("Toyota")) {
+            value = value.multiply(BigDecimal.valueOf(.75));
         }
 
         return getOriginalCost().subtract(value);
