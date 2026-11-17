@@ -41,21 +41,21 @@ public class Vehicle extends Asset {
 
     @Override
     public BigDecimal getValue() {
-        BigDecimal value = BigDecimal.ZERO;
+        BigDecimal depreciation = BigDecimal.ZERO;
         LocalDate yearNow = LocalDate.now();
         int age = yearNow.getYear() - getYear();
         switch (age) {
-            case 0, 1, 2, 3 -> value = getOriginalCost().multiply(new BigDecimal(".03").multiply(BigDecimal.valueOf(age)));
-            case 4, 5, 6 -> value = getOriginalCost().multiply(new BigDecimal(".06").multiply(BigDecimal.valueOf(age)));
-            case 7, 8, 9, 10 -> value = getOriginalCost().multiply(new BigDecimal(".08").multiply(new BigDecimal(age)));
+            case 0, 1, 2, 3 -> depreciation = getOriginalCost().multiply(new BigDecimal(".03").multiply(BigDecimal.valueOf(age)));
+            case 4, 5, 6 -> depreciation = getOriginalCost().multiply(new BigDecimal(".06").multiply(BigDecimal.valueOf(age)));
+            case 7, 8, 9, 10 -> depreciation = getOriginalCost().multiply(new BigDecimal(".08").multiply(new BigDecimal(age)));
             default -> {
-                value = BigDecimal.valueOf(1000);
+                depreciation = BigDecimal.valueOf(1000);
             }
         }
         if (odometer > 100000 && !getMakeModel().contains("Honda") && !getMakeModel().contains("Toyota")) {
-            value = value.multiply(BigDecimal.valueOf(.75));
+            return depreciation.multiply(BigDecimal.valueOf(.75));
         }
-
-        return getOriginalCost().subtract(value);
+        BigDecimal value = getOriginalCost().subtract(depreciation);
+        return value;
     }
 }
