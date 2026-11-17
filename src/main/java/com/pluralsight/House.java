@@ -50,14 +50,14 @@ public class House extends Asset {
 
     @Override
     public BigDecimal getValue() {
-        double value = 0;
+        BigDecimal value = BigDecimal.ZERO;
         switch (getCondition()) {
-            case 1 -> value = 180 * this.squareFoot;
-            case 2 -> value = 130 * this.squareFoot;
-            case 3 -> value = 90 * this.squareFoot;
-            case 4 -> value = 80 * this.squareFoot;
+            case 1 -> value = new BigDecimal("180").multiply(new BigDecimal(this.squareFoot));
+            case 2 -> value = new BigDecimal("130").multiply(new BigDecimal(this.squareFoot));
+            case 3 -> value = new BigDecimal("90").multiply(new BigDecimal(this.squareFoot));
+            case 4 -> value = new BigDecimal("80").multiply(new BigDecimal(this.squareFoot));
             default -> System.out.println("Condition should be a value 1-4");
         }
-        return new BigDecimal(value + (.25 * getLotSize()));
+        return value.add(new BigDecimal(".25").multiply(new BigDecimal(getLotSize())));
     }
 }
