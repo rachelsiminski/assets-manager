@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 
 public class Vehicle extends Asset {
@@ -43,19 +44,17 @@ public class Vehicle extends Asset {
     public BigDecimal getValue() {
         BigDecimal depreciation = BigDecimal.ZERO;
         LocalDate yearNow = LocalDate.now();
-        int age = yearNow.getYear() - getYear();
+        int age = yearNow.getYear() - this.getYear();
         switch (age) {
-            case 0, 1, 2, 3 -> depreciation = getOriginalCost().multiply(new BigDecimal(".03").multiply(BigDecimal.valueOf(age)));
-            case 4, 5, 6 -> depreciation = getOriginalCost().multiply(new BigDecimal(".06").multiply(BigDecimal.valueOf(age)));
-            case 7, 8, 9, 10 -> depreciation = getOriginalCost().multiply(new BigDecimal(".08").multiply(new BigDecimal(age)));
-            default -> {
-                depreciation = BigDecimal.valueOf(1000);
-            }
+            case 0 -> depreciation = this.getOriginalCost().multiply(new BigDecimal(".03"));
+            case 1, 2, 3 -> depreciation = this.getOriginalCost().multiply(new BigDecimal(".03").multiply(new BigDecimal(age)));
+            case 4, 5, 6 -> depreciation = this.getOriginalCost().multiply(new BigDecimal(".06").multiply(new BigDecimal(age)));
+            case 7, 8, 9, 10 -> depreciation = this.getOriginalCost().multiply(new BigDecimal(".08").multiply(new BigDecimal(age)));
+            default -> depreciation = new BigDecimal("1000");
         }
-        if (odometer > 100000 && !getMakeModel().contains("Honda") && !getMakeModel().contains("Toyota")) {
-            return depreciation.multiply(BigDecimal.valueOf(.75));
+        if (odometer > 100000 && !this.getMakeModel().contains("Honda") && !this.getMakeModel().contains("Toyota")) {
+            depreciation = depreciation.multiply(new BigDecimal(".25")).setScale(2, RoundingMode.HALF_UP);
         }
-        BigDecimal value = getOriginalCost().subtract(depreciation);
-        return value;
+        return this.getOriginalCost().subtract(depreciation);
     }
 }

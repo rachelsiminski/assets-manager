@@ -7,7 +7,7 @@ public class App {
     public static void main(String[] args) {
         Asset house1 = new House("House", "11/11/2011", new BigDecimal("235500"), "222 Abc Rd", 2, 1800, 6000);
         Asset house2 = new House("Vacation", "11/11/2021", new BigDecimal("999999"), "224 Abc Rd", 1, 800, 2000);
-        Asset vehicle1 = new Vehicle("Car", "11/10/2026", new BigDecimal("10000"), "Hyundai Sonata", 2026, 100);
+        Asset vehicle1 = new Vehicle("Car", "11/10/2026", new BigDecimal("10000"), "Hyundai Sonata", 2026, 120000);
         Asset vehicle2 = new Vehicle("Motorcycle", "03/10/2026", new BigDecimal("20000"), "Harley Davidson", 2024, 10000);
 
         ArrayList<Asset> assets = new ArrayList<>();

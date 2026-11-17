@@ -51,7 +51,7 @@ public class House extends Asset {
     @Override
     public BigDecimal getValue() {
         BigDecimal value = BigDecimal.ZERO;
-        switch (getCondition()) {
+        switch (this.getCondition()) {
             case 1 -> value = new BigDecimal("180").multiply(new BigDecimal(this.squareFoot));
             case 2 -> value = new BigDecimal("130").multiply(new BigDecimal(this.squareFoot));
             case 3 -> value = new BigDecimal("90").multiply(new BigDecimal(this.squareFoot));
