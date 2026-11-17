@@ -56,6 +56,7 @@ public class House extends Asset {
             case 2 -> value = 130 * this.squareFoot;
             case 3 -> value = 90 * this.squareFoot;
             case 4 -> value = 80 * this.squareFoot;
+            default -> System.out.println("Condition should be a value 1-4");
         }
 
 
