@@ -17,11 +17,6 @@ public class App {
         assets.add(house2);
         assets.add(vehicle2);
 
-        for (Asset asset : assets) {
-            System.out.println("Date Acquired: " + asset.getDateAcquired() + "\nDescription: " + asset.getDescription() + "\nCost: " + asset.getOriginalCost() + "\nValue: " + asset.getValue());
-            System.out.println();
-        }
-
         for (int i = 0; i < assets.size(); i++) {
             if (assets.get(i) instanceof House) {
                 System.out.println("Address: " + ((House) assets.get(i)).getAddress());
@@ -31,6 +26,8 @@ public class App {
                 System.out.println("Make and Model: " + ((Vehicle) assets.get(i)).getMakeModel());
                 System.out.println();
             }
+            System.out.println("Date Acquired: " + assets.get(i).getDateAcquired() + "\nDescription: " + assets.get(i).getDescription() + "\nCost: " + assets.get(i).getOriginalCost() + "\nValue: " + assets.get(i).getValue());
+            System.out.println("---------------------------------");
         }
     }
 }
