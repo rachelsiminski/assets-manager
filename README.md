@@ -18,3 +18,10 @@ After that, there were no more errors, so I went ahead to main() and created a n
 ![AI Prompt 2](images/ai-prompt-pt2.png)
 ![AI Prompt 3](images/ai-prompt-pt3.png)
 ![AI Prompt 4](images/ai-prompt-pt4.png)
+
+Quiz:
+![AI Quiz Prompt 1](images/ai-quiz.png)
+![AI Quiz Prompt 2](images/ai-quiz-pt2.png)
+![AI Quiz Prompt 3](images/ai-quiz-pt3.png)
+![AI Quiz Prompt 4](images/ai-quiz-pt4.png)
+![AI Quiz Prompt 5](images/ai-quiz-pt5.png)
