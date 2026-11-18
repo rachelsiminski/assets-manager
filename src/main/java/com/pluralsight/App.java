@@ -13,6 +13,7 @@ public class App {
         Asset vehicle2 = new Vehicle("Motorcycle", "03/10/2026", new BigDecimal("20000"), "Harley Davidson", 2024, 10000);
         Asset art1 = new Art("Starry Night", "01/01/1900", new BigDecimal("100000000"), "Vincent Van Gogh", "Oil on Canvas", 1);
         Asset art2 = new Art("Black Fire I", "05/01/2014", new BigDecimal("84000000"), "Barnett Newman", "Oil on Canvas", 2);
+        Asset cash = new Cash("Cash under the mattress", "03/02/2020", new BigDecimal("9999999999999999999"));
 
         ArrayList<Asset> assets = new ArrayList<>();
         assets.add(house1);
@@ -21,6 +22,7 @@ public class App {
         assets.add(vehicle2);
         assets.add(art1);
         assets.add(art2);
+        assets.add(cash);
 
         for (int i = 0; i < assets.size(); i++) {
             if (assets.get(i) instanceof House) {
