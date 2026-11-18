@@ -10,3 +10,11 @@ It was set to return null, though, so I changed that to return getOriginalCost()
 Next, the signature was still underlined, so I hovered again and the next error was that I didn't have the constructor based on the Asset constructor.
 Again, it offered the option to just click and generate the constructor, so I did that, and it populated as expected and I didn't have to change anything.
 After that, there were no more errors, so I went ahead to main() and created a new cash object to add to my assets arraylist.
+
+
+### Exercise - Prompting Patterns
+##### Screenshots
+![AI Prompt 1](images/ai-prompt.png)
+![AI Prompt 2](images/ai-prompt-pt2.png)
+![AI Prompt 3](images/ai-prompt-pt3.png)
+![AI Prompt 4](images/ai-prompt-pt4.png)
