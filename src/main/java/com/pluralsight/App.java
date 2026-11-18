@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) {
+        // Abstract
+
         Asset house1 = new House("House", "11/11/2011", new BigDecimal("235500"), "222 Abc Rd", 2, 1800, 6000);
         Asset house2 = new House("Vacation", "11/11/2021", new BigDecimal("999999"), "224 Abc Rd", 1, 800, 2000);
         Asset vehicle1 = new Vehicle("Car", "11/10/2026", new BigDecimal("10000"), "Hyundai Sonata", 2026, 120000);
@@ -26,7 +28,7 @@ public class App {
             } else if (assets.get(i) instanceof Vehicle) {
                 System.out.println("Make and Model: " + ((Vehicle) assets.get(i)).getMakeModel());
             } else if (assets.get(i) instanceof Art) {
-                System.out.println("Artist: " + ((Art) assets.get(i)).getArtist());
+                System.out.println("Artist: " + ((Art) assets.get(i)).getArtist() + ", Value: $" + assets.get(i).getValue());
             }
             System.out.println(assets.get(i).toString());
             System.out.println("---------------------------------");
