@@ -40,4 +40,11 @@ public class Asset {
     public BigDecimal getValue() {
         return this.originalCost;
     }
+
+    @Override
+    public String toString() {
+        return "Description: " + description +
+                ", Date Acquired: " + dateAcquired +
+                ", Original Cost: $" + originalCost;
+    }
 }
