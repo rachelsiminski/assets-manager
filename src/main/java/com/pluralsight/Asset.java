@@ -41,8 +41,9 @@ public abstract class Asset {
 
     @Override
     public String toString() {
-        return "Description: " + description +
-                ", Date Acquired: " + dateAcquired +
-                ", Original Cost: $" + originalCost;
+        return "Description: " + getDescription() +
+                ", Date Acquired: " + getDateAcquired() +
+                ", Original Cost: $" + getOriginalCost() +
+                ", Current Value: $" + getValue();
     }
 }

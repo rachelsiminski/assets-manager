@@ -30,7 +30,7 @@ public class App {
             } else if (assets.get(i) instanceof Vehicle) {
                 System.out.println("Make and Model: " + ((Vehicle) assets.get(i)).getMakeModel() + " Odometer reading: " + ((Vehicle) assets.get(i)).getOdometer());
             } else if (assets.get(i) instanceof Art) {
-                System.out.println("Artist: " + ((Art) assets.get(i)).getArtist() + ", Value: $" + assets.get(i).getValue());
+                System.out.println("Artist: " + ((Art) assets.get(i)).getArtist());
             }
             System.out.println(assets.get(i).toString());
             System.out.println("---------------------------------");
