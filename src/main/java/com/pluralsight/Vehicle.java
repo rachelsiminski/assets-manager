@@ -58,7 +58,7 @@ public class Vehicle extends Asset {
             }
         }
         if (odometer > 100000 && !this.getMakeModel().contains("Honda") && !this.getMakeModel().contains("Toyota")) {
-            depreciation = depreciation.multiply(new BigDecimal("1.25"));
+            depreciation = getOriginalCost().subtract(depreciation).multiply(new BigDecimal(".25"));
         }
         return this.getOriginalCost().subtract(depreciation).setScale(2, RoundingMode.HALF_UP);
     }
